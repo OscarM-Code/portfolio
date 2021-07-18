@@ -1,0 +1,876 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.toggle
+{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #000 url(img/menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.toggle:hover
+{
+    transform: scale(1.2);
+}
+
+.toggle.active
+{
+    background: #000 url(img/close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section
+{
+    padding: 100px;
+    min-height: 100vh;
+}
+
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.banner .imgSidebar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+}
+
+.banner .imgSidebar img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .contentBx,
+.sidebar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 500px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.logoText
+{
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #333;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.banner .contentBx h4
+{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.banner .contentBx h4 span
+{
+    color: #00bcd4;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.banner .contentBx h2
+{
+    font-size: 3em;
+    color: #333;
+    line-height: 1em;
+}
+
+p
+{
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.btn
+{
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover
+{
+    transform: scale(1.2);
+}
+
+.sidebar
+{
+    position: fixed;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    padding: 40px;
+    z-index: 100;
+    right: -100%;
+}
+
+.sidebar.active
+{
+    right: 0;
+}
+
+.sidebar ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar ul li
+{
+    list-style: none;
+}
+
+.sidebar ul li a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 10px 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sidebar ul li a:hover
+{
+    color: #00bcd4;
+}
+
+.sci
+{
+    position: absolute;
+    left: 100px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sci li
+{
+    margin-right: 10px;
+    list-style: none;
+}
+
+.sci li img
+{
+    opacity: 0.7;
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.logo 
+{
+    width: 60px;
+}
+
+.sci li img:hover
+{
+    opacity: 1;
+    transform: scale(0.7);
+}
+
+.title
+{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h2
+{
+    position: relative;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #00bcd4;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.title p
+{
+    max-width: 700px;
+    display: inline-block;
+}
+
+.title.white p
+{
+    color: #fff;
+}
+
+.title.white h2
+{
+    background: #fff;
+    color: #000;
+}
+
+.about
+{
+    background: #000;
+}
+
+.about .content
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.about .content .textBx
+{
+    min-width: 49%;
+    width: 49%;
+}
+
+.about .content .textBx p
+{
+    color: #fff;
+}
+
+.about .content .imgBx
+{
+    margin-left: 40px;
+}
+
+.about .content .imgBx img
+{
+    max-width: 100%;
+}
+
+.logoC
+{
+    height: 83px;
+}
+
+.services .content
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.services .content .serviceBx
+{
+    padding: 40px 20px;
+    min-width: 340px;
+    margin: 20px;
+    transition: 1s;
+    text-align: center;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#imgPHP
+{
+    margin-top: 20px;
+}
+
+#textPHP
+{
+    margin-top: 30px;
+}
+
+.services .content .serviceBx img
+{
+    max-width: 80px;
+    transition: 1s;
+}
+
+.services .content .serviceBx h2
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.services .content .serviceBx div
+{
+    margin: 0;
+    transition: 0.5s;
+    background: #000;
+    width: 80%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.services .content .serviceBx div div
+{
+    height: 80%;
+    margin-left: 2.5px;
+}
+
+.services .content .serviceBx:nth-child(1) div div
+{
+    width: 80%;
+    background: tomato;
+}
+
+.services .content .serviceBx:nth-child(2) div div
+{
+    width: 70%;
+    background: rgb(44, 121, 238);
+}
+
+.services .content .serviceBx:nth-child(3) div div
+{
+    width: 60%;
+    background: rgb(238, 214, 2);
+}
+
+.services .content .serviceBx:nth-child(4) div div
+{
+    width: 35%;
+    background: rgb(94, 73, 209);
+}
+
+.services .content .serviceBx:nth-child(5) div div
+{
+    width: 40%;
+    background: rgb(250, 74, 20);
+}
+
+.services .content .serviceBx:nth-child(6) div div
+{
+    width: 30%;
+    background: rgb(65, 137, 231);
+}
+
+.services .content .serviceBx:nth-child(7) div div
+{
+    width: 40%;
+    background: rgb(35, 243, 53);
+}
+
+.services .content .serviceBx:nth-child(8) div div
+{
+    width: 25%;
+    background: brown;
+}
+
+.work
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.work .content
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.work .content .workBx
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.work .content .workBx .imgBx
+{
+    transition: 0.5s;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    transform: scale(1);
+}
+
+.work .content .workBx .imgBx img
+{
+    transition: 0.5s;
+}
+
+.work .content .workBx .imgBx:hover img
+{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.work .card
+{
+    position: fixed;
+    top: 0vh;
+    right: 25vw;
+    width: 50vw;
+    height: 100vh;
+    z-index: 10000;
+    background:#000;
+    transition: 0.5s;
+    transform: scale(0);
+    color: #fff;
+}
+
+#closeCard
+{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 80px;
+    height: 25px;
+    display: flex;
+    font-size: 0.75rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+#closeCard:hover img
+{
+    transform: scale(1.2);
+}
+
+#closeCard:hover
+{
+    cursor: pointer;
+}
+
+#closeCard img
+{
+    height: 25px;
+    width: auto;
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+#closeCard p
+{
+    margin: 0;
+}
+
+.work .card div a 
+{
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+}
+
+.work .card div p
+{
+    width: 80%;
+}
+
+.work .card div a:hover
+{
+    cursor: pointer;
+}
+
+.work .card div a p
+{
+    width: 100%;
+    transform: translateY(0%);
+    transition: 0.5s;
+}
+
+.work .card div a:hover p
+{
+    color: #00bcd4;
+    transform: translateY(-25%);
+}
+.work .card div img
+{
+    width: 100%;
+}
+
+.work .card div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.work .content .workBx .imgBx button
+{
+    margin-top: 2vh;
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+
+.work .content .workBx .imgBx:hover button
+{
+    color: #00bcd4;
+    transform: scale(1.05);
+}
+
+.work .content .workBx .imgBx img:hover
+{
+    cursor:initial;
+}
+
+.imageP
+{
+    width: 400px;
+}
+
+.contact
+{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .contactForm
+{
+    position: relative;
+    width: 700px;
+    margin-top: 20px;
+}
+
+.contact .contactForm .row
+{
+    width: 100%;
+    display: flex;
+}
+
+.contact .contactForm .row .col50
+{
+    width: 50%;
+    margin: 10px;
+}
+
+.contact .contactForm .row .col100
+{
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+}
+
+.contact .contactForm .row input,
+.contact .contactForm .row textarea
+{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact .contactForm .row textarea
+{
+    height: 100px;
+}
+
+.contact .contactForm .row button
+{
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    max-width: 150px;
+    border: none;
+    transform: scale(1);
+    transition: 0.25s;
+    margin-top: 10px;
+}
+
+.contact .contactForm .row button:hover
+{
+    transform: scale(1.2);
+}
+
+#mailValid
+{
+    width: auto;
+    background: transparent;
+    height: auto;
+}
+
+#mailValid p
+{
+    margin: 5px;
+}
+
+.contact .contactForm .row:nth-child(4) .col100
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+@media (max-width: 991px)
+{
+    .banner .imgSidebar
+    {
+        display: none;
+    }
+
+    .banner .contentBx, .sidebar
+    {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .logoText
+    {
+        left: 40px;
+    }
+
+    .toggle
+    {
+        right: 40px;
+    }
+
+    .sci
+    {
+        left: 40px;
+    }
+
+    section
+    {
+        padding: 40px;
+    }
+
+    .about .content
+    {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .about .content .textBx
+    {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .about  .content .imgBx
+    {
+        margin-left: 0;
+    }
+
+    .services .content .serviceBx
+    {
+        padding: 30px 20px;
+        max-width: 340px;
+        margin: 10px;
+    }
+
+    .contactForm
+    {
+        width: 100%;
+    }
+
+    .contactForm .row
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact .contactForm .row .col50
+    {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .sidebar ul li a
+    {
+        font-size: 1.5em;
+    }
+
+    .work .content .workBx
+    {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        width: 95vw;
+    }
+
+    .work .content .workBx .imgBx button
+    {
+        text-decoration: underline;
+    }
+
+    #closeCard p
+    {
+        text-decoration: underline;
+    }
+
+    .work .card
+    {
+        width: 95vw;
+        right: 2.5vw;
+        height: 80vh;
+        top: 10vh;
+    }
+
+    .work .card div a
+    {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 500px)
+{
+    .services .content .serviceBx, 
+    .work .content .workBx
+    {
+        padding: 30px 20px;
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+ 
+
+    .work .content .workBx
+    {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        width: 95vw;
+    }
+
+    .work .content
+    {
+        width: 95vw;
+    }
+
+    .work .content .workBx .imgBx
+    {
+        width: 100%;
+    }
+
+    .work .content .workBx .imgBx button
+    {
+        text-decoration: underline;
+    }
+
+    .work .content .workBx .imgBx img
+    {
+        width: 100%;
+    }
+
+    .contact .contactForm
+    {
+        width: 95vw;
+    }
+
+    .work
+    {
+        padding: 0;
+    }
+
+    .work .card
+    {
+        width: 95vw;
+        right: 2.5vw;
+        height: 92vh;
+        top: 4vh;
+    }
+
+    .work .card div p
+    {
+        margin: 0;
+        width: 98%;
+    }
+
+    .work .card div a
+    {
+        font-size: 1rem;
+        align-self: flex-start;
+        margin-bottom: 3px;
+        margin-left: 3px;
+        text-decoration: underline;
+    }
+
+    #closeCard p
+    {
+        text-decoration: underline;
+    }
+
+    #mailValid
+    {
+        width: 100%;
+    }
+
+}

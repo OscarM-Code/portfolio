@@ -6,7 +6,7 @@ $c = $_GET["mail"];
 $d = $_GET["tel"];
 $e = $_GET["content"];
 
-$to = "millot.o@codeur.online";
+$to = "oscarmillot23@gmail.com";
 $subject = "Nom : $a  Prénom : $b";
 $message = $e;
 $headers = "De : $c" . "\r\n" .

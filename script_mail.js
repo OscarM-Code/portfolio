@@ -1,14 +1,16 @@
-var sendMail = document.querySelector(".col100 button");
+var sendMail = document.querySelector("form");
 var a;
 var b;
 var c;
 var d;
 var e;
-const regexName = /^[A-Za-zÀ-ú']{1,15}/g;
+const regexName = /^[A-Za-zÀ-ú']{1,15}$/g;
 const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexTel = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-sendMail.addEventListener("click", function() {
+
+sendMail.addEventListener("submit", function(ev) {
+    ev.preventDefault();
     a = document.querySelector(".contactForm .row:nth-child(1) .col50:nth-child(1) input").value;
     b = document.querySelector(".contactForm .row:nth-child(1) .col50:nth-child(2) input").value;
     c = document.querySelector(".contactForm .row:nth-child(2) .col50:nth-child(1) input").value;
@@ -42,13 +44,8 @@ sendMail.addEventListener("click", function() {
         response.style.border = "2px solid orange";
     } else {
         ajaxC();
+        sendMail.reset();
     }
-
-    document.querySelector(".contactForm .row:nth-child(1) .col50:nth-child(1) input").value = "";
-    document.querySelector(".contactForm .row:nth-child(1) .col50:nth-child(2) input").value = "";
-    document.querySelector(".contactForm .row:nth-child(2) .col50:nth-child(1) input").value = ""; 
-    document.querySelector(".contactForm .row:nth-child(2) .col50:nth-child(2) input").value = "";
-    document.querySelector(".contactForm .row:nth-child(3) .col100 textarea").value = "";
 })
 
 function ajaxC() {

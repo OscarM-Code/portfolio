@@ -438,6 +438,11 @@ p
     flex-wrap: wrap;
 }
 
+.work .title h2
+{
+    margin-bottom: 75px;
+}
+
 
 .work .content .workBx .imgBx
 {
@@ -588,6 +593,11 @@ p
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.contact .title h2
+{
+    margin-bottom: 50px;
 }
 
 .contact .contactForm

@@ -46,7 +46,7 @@ sendMail.addEventListener("submit", function(ev) {
         response.style.border = "2px solid orange";
     } else {
         ajaxC();
-        // sendMail.reset();
+        sendMail.reset();
     }
 })
 

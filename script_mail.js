@@ -4,9 +4,10 @@ var b;
 var c;
 var d;
 var e;
-const regexName = /^[A-Za-zÀ-ú']{1,15}$/g;
+const regexName = /^[A-Za-zÀ-ú'-]{1,15}$/g;
 const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const regexTel = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+const regexTel = /^(^[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}$)|(^[0-9]{10}$)|(^[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{2}$)|(^\+[0-9]{1,3}(| )([0-9]{9})|([0-9]{1} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2})|(^(\([0-9]{3}\)|[0-9]{3})(| )([0-9]{3})(| |-)([0-9]{4})$))$/im;
+const regexContent = /^[^<>]*$/;
 
 
 sendMail.addEventListener("submit", function(ev) {
@@ -21,9 +22,10 @@ sendMail.addEventListener("submit", function(ev) {
     var bOk = b.match(regexName);
     var cOk = c.match(regexMail);
     var dOk = d.match(regexTel);
+    var eOk = e.match(regexContent);
 
     if(a == "" || b =="" || c == "" || e == ""){
-        response.innerHTML = '<p> Tout les champs sauf "Téléphone" doivent être rempli. </p>';
+        response.innerHTML = '<p> Tous les champs obligatoires " * " doivent être rempli. </p>';
         response.style.color = "orange";
         response.style.border = "2px solid orange";
     } else if(aOk == null || bOk == null){
@@ -34,8 +36,8 @@ sendMail.addEventListener("submit", function(ev) {
         response.innerHTML = '<p> Vous devez entrer une adresse mail valide. </p>';
         response.style.color = "orange";
         response.style.border = "2px solid orange";
-    } else if(e.length < 20 || e.length > 1000) {
-        response.innerHTML = '<p> Le message dois contenir entre 20 et 1000 charactères. </p>';
+    } else if(e.length < 20 || e.length > 1000 || eOk == null) {
+        response.innerHTML = '<p> Le message dois contenir entre 20 et 1000 charactères et ne dois pas comporter "<" ou ">". </p>';
         response.style.color = "orange";
         response.style.border = "2px solid orange";
     } else if(d != "" && dOk == null) {
@@ -44,7 +46,7 @@ sendMail.addEventListener("submit", function(ev) {
         response.style.border = "2px solid orange";
     } else {
         ajaxC();
-        sendMail.reset();
+        // sendMail.reset();
     }
 })
 
